@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "page": 1,
+  "total_pages": 1,
+  "source_sha256": "8f0860b0c66321b50937da1f9c5b53024b6dd3113134aef211c97a0bcdd0cc99",
+  "source_unchanged": true,
+  "embedded_images": [
+    {
+      "page": 1,
+      "image_number": 0,
+      "kind": "image",
+      "width_px": 600,
+      "height_px": 600,
+      "color": "rgb",
+      "x_ppi": 300.0,
+      "y_ppi": 300.0,
+      "below_150_ppi": false
+    }
+  ],
+  "render_size_px": [
+    1536,
+    1536
+  ],
+  "background_check": {
+    "edge_median_luminance_0_to_255": 255.0,
+    "edge_white_pixel_ratio": 1.0,
+    "possible_gray_background": false,
+    "basis": "Outer border of a bounded page render; artwork/borders can trigger this flag."
+  },
+  "human_review_required": true,
+  "limitations": [
+    "This is a diagnostic, not a repaired PDF or a guarantee of sharp printing.",
+    "Low PPI may refer to a small logo rather than the page text.",
+    "Increasing export DPI cannot recover detail absent from the original scan.",
+    "Vector-text blur, printer settings and interior-only backgrounds are not diagnosed."
+  ]
+}
