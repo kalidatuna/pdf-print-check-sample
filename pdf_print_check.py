@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import io
 import json
+import math
 import os
 from pathlib import Path
 import statistics
@@ -38,6 +39,10 @@ def parse_images(output):
             }
         except (ValueError, IndexError) as exc:
             raise ValueError("Unrecognized pdfimages numeric fields") from exc
+        if (row["page"] < 1 or row["image_number"] < 0
+                or row["width_px"] < 1 or row["height_px"] < 1
+                or any(not math.isfinite(row[key]) or row[key] < 0 for key in ("x_ppi", "y_ppi"))):
+            raise ValueError("Unrecognized pdfimages numeric fields")
         row["below_150_ppi"] = min(row["x_ppi"], row["y_ppi"]) < 150
         images.append(row)
     return images
