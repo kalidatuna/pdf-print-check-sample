@@ -16,6 +16,8 @@ python3 pdf_print_check.py examples/gray-low-resolution.pdf
 
 Use `--page 2` to inspect another page. Processing failures exit with status 2; a successfully produced diagnostic exits with 0 even when it contains review flags. The input limit is 32 MiB and each Poppler command has a 20-second timeout.
 
+GitHub Actions installs Poppler and the Python dependencies, then runs the test suite on Python 3.10 and 3.12 for pull requests and pushes to `main`. The suite includes real synthetic PDF rendering and byte-for-byte source preservation checks. Malformed image metadata is rejected before generating the report.
+
 ## What the sample proves
 
 The gray fixture contains a full-page 72 PPI bitmap. The white fixture contains a full-page 300 PPI bitmap. Tests exercise both findings, vector-only PDFs, page selection, invalid inputs, CLI output, and byte-for-byte source preservation.
